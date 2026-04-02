@@ -31,3 +31,33 @@ src/
 **Parser supports:** `n/s/e/w/u/d`, `go <dir>`, `look/l`, `examine/x`, `look at <thing>`, `take/get/grab`, `pick up`, `drop`, `put down`, `inventory/i`, `help/?`, `quit/q`. Arrow keys cycle command history.
 
 **The 4 starting rooms:** Disruption Deck → Monetization Engine → Logic Gap (down), and Disruption Deck → Transparency Suite (east). Each has a dozen+ examine targets, rotating flavour responses for unknown commands, and first-visit vs. revisit descriptions.
+
+---
+
+## Deploying to Netlify
+
+A `netlify.toml` is included at the project root with the build config and an SPA redirect rule.
+
+**Via Netlify UI (recommended)**
+1. Push the repo to GitHub, GitLab, or Bitbucket.
+2. In Netlify: **Add new site → Import an existing project** and select the repo.
+3. Build settings are picked up automatically from `netlify.toml` — no manual configuration needed.
+4. Click **Deploy site**.
+
+Every subsequent push to the default branch triggers a new deploy automatically.
+
+**Via Netlify CLI**
+```bash
+npm install -g netlify-cli
+netlify login
+netlify init        # link or create a Netlify site
+netlify deploy --build --prod
+```
+
+**Build settings** (defined in `netlify.toml`):
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+
+No environment variables are required.
