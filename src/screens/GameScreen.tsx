@@ -68,7 +68,7 @@ export default function GameScreen({ onQuit }: Props) {
     // Clicking anywhere on the screen re-focuses the input
     <div className={styles.screen} onClick={() => inputRef.current?.focus()}>
       {/* Scrolling output log */}
-      <div className={styles.output} ref={outputRef}>
+      <div className={styles.outputLog} ref={outputRef}>
         {outputLines.map(line => (
           <div key={line.id} className={`${styles.line} ${styles[line.type]}`}>
             {line.text === '' ? '\u00A0' : line.text}
