@@ -1,0 +1,133 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: text;
+}
+
+/* ── Output log ─────────────────────────────────────────────────────────── */
+
+.output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem 1.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dim) transparent;
+}
+
+.output::-webkit-scrollbar {
+  width: 6px;
+}
+.output::-webkit-scrollbar-track {
+  background: transparent;
+}
+.output::-webkit-scrollbar-thumb {
+  background: var(--color-dim);
+  border-radius: 3px;
+}
+
+/* ── Individual output lines ─────────────────────────────────────────────── */
+
+.line {
+  font-size: var(--font-size-game);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.55em; /* keeps blank lines visible */
+}
+
+.output {
+  /* output (game text) */
+  color: var(--color-primary);
+  text-shadow: var(--glow-primary);
+}
+
+.line.output {
+  color: var(--color-primary);
+}
+
+.line.input {
+  color: var(--color-input);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--color-input) 50%, transparent);
+  margin-top: 0.6em;
+}
+
+.line.system {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ── Game-over banner ────────────────────────────────────────────────────── */
+
+.gameOverBar {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--color-dim);
+  color: var(--color-muted);
+  font-size: var(--font-size-game);
+}
+
+.restartBtn,
+.quitBtn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--color-input);
+  font-family: var(--font-mono);
+  font-size: inherit;
+  padding: 0.15em 0.7em;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.restartBtn:hover,
+.quitBtn:hover {
+  background: var(--color-input);
+  color: var(--color-bg);
+}
+
+/* ── Input bar ───────────────────────────────────────────────────────────── */
+
+.inputBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-top: 1px solid var(--color-dim);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.prompt {
+  color: var(--color-input);
+  font-size: var(--font-size-game);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--color-input) 60%, transparent);
+  user-select: none;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-input);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-game);
+  caret-color: var(--color-input);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--color-input) 50%, transparent);
+  /* Hide the default placeholder colour */
+}
+
+.input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.6;
+}
