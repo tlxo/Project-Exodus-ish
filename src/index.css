@@ -9,7 +9,9 @@
   --glow-primary: 0 0 8px color-mix(in srgb, #00e676 55%, transparent);
 
   --font-mono: 'Share Tech Mono', 'Courier New', monospace;
-  --font-size-game: clamp(15px, 2.2vw, 19px);
+  --font-size-game: clamp(13px, 2.2vw, 19px);
+  --output-padding-x: clamp(0.8rem, 3vw, 1.4rem);
+  --output-padding-y: clamp(0.6rem, 2vh, 1.2rem);
 }
 
 /* ── Reset ──────────────────────────────────────────────────────────────── */
@@ -21,7 +23,7 @@
 
 html, body, #root {
   width: 100%;
-  height: 100%;
+  height: 100dvh; /* accounts for mobile browser chrome */
   overflow: hidden;
 }
 
