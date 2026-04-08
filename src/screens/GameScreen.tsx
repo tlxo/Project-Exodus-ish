@@ -53,6 +53,7 @@ export default function GameScreen({ onQuit }: Props) {
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
+      void startMidi();
       if (e.key === 'ArrowUp') {
         e.preventDefault();
         const next = Math.min(historyIdx + 1, cmdHistory.length - 1);
