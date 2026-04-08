@@ -1,15 +1,12 @@
 # Exodus-ish
 
-Run locally at **http://localhost:5173**. 
+Runs locally at: **http://localhost:5173**. 
 
-Start with
+Start with:
 ```
 cd /Users/toni/Projects/Project-Exodus-ish
 npm run dev 2>&1
 ```
-
-
-Running clean at **http://localhost:5173**. Here's what was built:
 
 ---
 
