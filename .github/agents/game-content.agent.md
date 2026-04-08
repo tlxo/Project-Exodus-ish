@@ -15,11 +15,12 @@ Study the existing entries in `src/data/items.ts` and `src/data/rooms.ts` before
 ### Item (`src/engine/types.ts`)
 ```ts
 interface Item {
-  id: string;           // snake_case, unique
-  name: string;         // Title Case display name
-  aliases: string[];    // lowercase words the parser recognises
-  description: string;  // shown on EXAMINE — write satirically, 2-4 sentences
-  takeable: boolean;    // true if the player can pick it up
+  id: string;              // snake_case, unique
+  name: string;            // Title Case display name
+  aliases: string[];       // lowercase words the parser recognises
+  description: string;     // shown on EXAMINE — write satirically, 2-4 sentences
+  roomDescription?: string; // prose sentence shown in the room when this item is present; omit for generic "There is a X here" listing
+  takeable: boolean;       // true if the player can pick it up
 }
 ```
 
@@ -57,6 +58,7 @@ interface Room {
 - DO NOT create placeholder or TODO descriptions — every description must be fully written.
 - ONLY author content (items and rooms); do not refactor, rename, or restructure existing entries.
 - Item IDs referenced in `itemIds` must exist in the `ITEMS` object.
+- **Never hardcode item mentions inside a `Room`'s `description` or `shortDescription`.** If an item's presence warrants atmospheric prose in the room (e.g. "A maintenance manual sits on the console, lightly coffee-stained."), put that text in the item's `roomDescription` field instead. The engine renders it dynamically — it will appear when the item is in the room and disappear when it is taken.
 
 ## Output
 
