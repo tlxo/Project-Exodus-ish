@@ -7,6 +7,7 @@ import {
   type KeyboardEvent,
 } from 'react';
 import { useGame } from '../hooks/useGame';
+import { useMidi } from '../hooks/useMidi';
 import styles from './GameScreen.module.css';
 
 interface Props {
@@ -18,6 +19,9 @@ export default function GameScreen({ onQuit }: Props) {
   const [input, setInput] = useState('');
   const [cmdHistory, setCmdHistory] = useState<string[]>([]);
   const [historyIdx, setHistoryIdx] = useState(-1);
+
+  const [musicEnabled, setMusicEnabled] = useState(true);
+  const { start: startMidi } = useMidi('/gangsta.mid', musicEnabled);
 
   const outputRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -65,8 +69,8 @@ export default function GameScreen({ onQuit }: Props) {
   );
 
   return (
-    // Clicking anywhere on the screen re-focuses the input
-    <div className={styles.screen} onClick={() => inputRef.current?.focus()}>
+    // Clicking anywhere on the screen re-focuses the input and starts audio
+    <div className={styles.screen} onClick={() => { inputRef.current?.focus(); void startMidi(); }}>
       {/* Scrolling output log */}
       <div className={styles.outputLog} ref={outputRef}>
         {outputLines.map(line => (
@@ -91,6 +95,15 @@ export default function GameScreen({ onQuit }: Props) {
       {!gameOver && (
         <form className={styles.inputBar} onSubmit={handleSubmit}>
           <span className={styles.prompt}>&gt;</span>
+          <button
+            type="button"
+            className={styles.muteBtn}
+            onClick={e => { e.stopPropagation(); setMusicEnabled(v => !v); }}
+            aria-label={musicEnabled ? 'Mute music' : 'Unmute music'}
+            title={musicEnabled ? 'Mute music' : 'Unmute music'}
+          >
+            {musicEnabled ? '♪' : '✕'}
+          </button>
           <input
             ref={inputRef}
             className={styles.input}
