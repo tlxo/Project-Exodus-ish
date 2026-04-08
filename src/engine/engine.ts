@@ -251,6 +251,43 @@ export function processCommand(
       break;
     }
 
+    case 'music': {
+      const wantOn = command.noun === 'on';
+      const wantOff = command.noun === 'off';
+      const toggle = command.noun === null;
+
+      if (wantOn || (toggle && !s.musicEnabled)) {
+        if (s.musicEnabled) {
+          output.push(
+            'The ambient soundscape is already streaming.',
+            'The AI Pilot notes your enthusiasm and logs it as a positive engagement metric.',
+          );
+        } else {
+          s = { ...s, musicEnabled: true };
+          output.push(
+            'The ambient soundscape reinitialises.',
+            "The AI Pilot describes it as 'an immersive audio journey fully aligned with your productivity metrics.'",
+            'It is the same loop as before. It has always been the same loop.',
+          );
+        }
+      } else if (wantOff || (toggle && s.musicEnabled)) {
+        if (!s.musicEnabled) {
+          output.push(
+            'The soundscape is already offline.',
+            'Silence remains your current user experience. The AI Pilot is disappointed but supportive.',
+          );
+        } else {
+          s = { ...s, musicEnabled: false };
+          output.push(
+            'The soundscape disengages.',
+            'Silence rushes in to fill the paradigm vacuum.',
+            "The AI Pilot logs this interaction as 'low engagement.' It will remember.",
+          );
+        }
+      }
+      break;
+    }
+
     case 'help': {
       output.push(
         'Available commands:',
@@ -261,6 +298,8 @@ export function processCommand(
         '  TAKE [item]           \u2014 Pick up an item',
         '  DROP [item]           \u2014 Leave an item behind',
         '  INVENTORY  (I)        \u2014 List what you are carrying',
+        '  MUSIC [ON|OFF]        \u2014 Toggle the ambient soundscape',
+        '  MUTE / UNMUTE         \u2014 Silence or restore the soundscape',
         '  HELP  (?)             \u2014 Show this message',
         '  QUIT  (Q)             \u2014 End the simulation',
       );

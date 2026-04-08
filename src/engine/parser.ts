@@ -20,6 +20,7 @@ const VERB_MAP: Record<string, Verb> = {
   inventory: 'inventory', i: 'inventory', inv: 'inventory',
   help: 'help', '?': 'help',
   quit: 'quit', q: 'quit',
+  music: 'music', sound: 'music', audio: 'music',
 };
 
 export function parseInput(raw: string): ParsedCommand {
@@ -32,6 +33,10 @@ export function parseInput(raw: string): ParsedCommand {
   }
 
   const first = tokens[0];
+
+  // Bare mute/unmute → music off / music on
+  if (first === 'mute') return { verb: 'music', noun: 'off', raw: trimmed };
+  if (first === 'unmute') return { verb: 'music', noun: 'on', raw: trimmed };
 
   // Bare direction word → go <direction>
   if (BARE_DIRECTIONS.has(first)) {
@@ -63,6 +68,18 @@ export function parseInput(raw: string): ParsedCommand {
   if (first === 'put' && rest[0] === 'down') {
     const noun = rest.slice(1).join(' ') || null;
     return { verb: 'drop', noun, raw: trimmed };
+  }
+
+  // Normalise music noun: on/play → 'on', off/stop → 'off'
+  if (verb === 'music') {
+    const dir = rest[0];
+    if (dir === 'on' || dir === 'play' || dir === 'start') {
+      return { verb: 'music', noun: 'on', raw: trimmed };
+    }
+    if (dir === 'off' || dir === 'stop') {
+      return { verb: 'music', noun: 'off', raw: trimmed };
+    }
+    return { verb: 'music', noun: null, raw: trimmed };
   }
 
   const noun = rest.length > 0 ? rest.join(' ') : null;

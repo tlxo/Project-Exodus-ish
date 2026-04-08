@@ -15,12 +15,11 @@ interface Props {
 }
 
 export default function GameScreen({ onQuit }: Props) {
-  const { outputLines, gameOver, submitCommand, newGame } = useGame();
+  const { outputLines, gameOver, musicEnabled, submitCommand, newGame } = useGame();
   const [input, setInput] = useState('');
   const [cmdHistory, setCmdHistory] = useState<string[]>([]);
   const [historyIdx, setHistoryIdx] = useState(-1);
 
-  const [musicEnabled, setMusicEnabled] = useState(true);
   const { start: startMidi } = useMidi('/gangsta.mid', musicEnabled);
 
   const outputRef = useRef<HTMLDivElement>(null);
@@ -99,7 +98,7 @@ export default function GameScreen({ onQuit }: Props) {
           <button
             type="button"
             className={styles.muteBtn}
-            onClick={e => { e.stopPropagation(); setMusicEnabled(v => !v); }}
+            onClick={e => { e.stopPropagation(); submitCommand('music'); }}
             aria-label={musicEnabled ? 'Mute music' : 'Unmute music'}
             title={musicEnabled ? 'Mute music' : 'Unmute music'}
           >

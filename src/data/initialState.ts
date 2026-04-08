@@ -21,5 +21,6 @@ export function createInitialState(): GameState {
     flags: {},
     turns: 0,
     gameOver: false,
+    musicEnabled: true,
   };
 }

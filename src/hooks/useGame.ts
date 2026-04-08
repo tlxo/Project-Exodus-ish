@@ -90,6 +90,7 @@ export function useGame() {
   return {
     outputLines: state.outputLines,
     gameOver: state.gameState.gameOver,
+    musicEnabled: state.gameState.musicEnabled,
     submitCommand,
     newGame,
   };

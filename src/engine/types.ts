@@ -9,6 +9,7 @@ export type Verb =
   | 'inventory'
   | 'help'
   | 'quit'
+  | 'music'
   | 'unknown';
 
 export interface ParsedCommand {
@@ -59,6 +60,8 @@ export interface GameState {
   flags: Record<string, boolean>;
   turns: number;
   gameOver: boolean;
+  /** Whether the ambient soundscape is currently enabled. */
+  musicEnabled: boolean;
 }
 
 export interface OutputLine {
