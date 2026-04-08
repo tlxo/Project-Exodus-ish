@@ -30,6 +30,16 @@ export const ITEMS: Record<string, Item> = {
     takeable: true,
   },
 
+  sumatran_coffee_beans: {
+    id: 'sumatran_coffee_beans',
+    name: 'Single-Origin Sumatran Beans',
+    aliases: ['coffee', 'beans', 'coffee beans', 'sumatran', 'sumatra', 'canister'],
+    description:
+      'A hand-numbered matte black canister, sealed with a wax stamp and a QR code that, if scanned, would take you to a four-minute film about the farming cooperative. The label reads: "Gayo Highland Reserve, Lot 47. Tasting notes: dark chocolate, tobacco, existential clarity." They are, against all reasonable expectations, the best-smelling thing on this ship.',
+    roomDescription: 'One of the hand-numbered canisters sits slightly forward on its bracket, as though volunteering.',
+    takeable: true,
+  },
+
   emergency_pivot_lever: {
     id: 'emergency_pivot_lever',
     name: 'Emergency Pivot Lever',

@@ -18,6 +18,7 @@ A polished plaque by the bulkhead door reads: Welcome aboard the S.S. Disruptor.
     exits: {
       north: 'monetization_engine',
       east: 'transparency_suite',
+      west: 'single_origin_sanctum',
     },
 
     itemIds: ['kombucha_bottle'],
@@ -108,6 +109,52 @@ Beneath it, in text visible only when the sun hits it at a specific angle (which
       sun: 'You glance toward the sun. You immediately regret this. Your retinas are now filing a worker\'s compensation claim.',
       table: 'A perspex side table, warped slightly by the accumulated heat. The sunglasses are balanced on its surface, somehow intact.',
       'side table': 'A perspex side table, warped slightly by the accumulated heat. The sunglasses are balanced on its surface, somehow intact.',
+    },
+  },
+
+  single_origin_sanctum: {
+    id: 'single_origin_sanctum',
+    name: 'The Single-Origin Sanctum',
+    description: `The S.S. Disruptor allocates more climate-controlled square footage to coffee storage than to any life-support redundancy. Priorities.
+
+The air in here is 19°C and 65% relative humidity. A laminated placard above the racking confirms this in a font that cost someone money. The beans — single-origin, Sumatran, shade-grown at altitude by a cooperative whose name the brochure misspells — are sealed in hand-numbered matte black canisters arranged on mahogany brackets, each one lit from below by a soft amber spotlight.
+
+The placard reads: "Responsibly sourced from Sumatra's Gayo Highlands. Tasting notes: dark chocolate, tobacco, the quiet dignity of a long supply chain." A smaller placard below adds: "Do not refrigerate. Do not freeze. Do not remove below Level 9 Beverage Authorization clearance."
+
+You are standing, sweating faintly, in a room that is both more serene and more serious than any room on this ship has any right to be.`,
+
+    shortDescription:
+      'The Single-Origin Sanctum. Climate-controlled, amber-lit, aggressively reverent. The beans are fine. You are not.',
+
+    exits: {
+      east: 'disruption_deck',
+    },
+
+    itemIds: ['sumatran_coffee_beans'],
+
+    examineTargets: {
+      placard:
+        'The placard reads: "Gayo Highland Reserve. 19°C. 65% RH. Do not breathe directly on the product." You have already breathed directly on the product.',
+      sign:
+        'The placard reads: "Gayo Highland Reserve. 19°C. 65% RH. Do not breathe directly on the product." You have already breathed directly on the product.',
+      canisters:
+        'Forty-seven hand-numbered matte black canisters on mahogany brackets, each amber-lit from below. Lot 47 is missing. Its bracket looks pointed about this.',
+      canister:
+        'Forty-seven hand-numbered matte black canisters on mahogany brackets, each amber-lit from below. Lot 47 is missing. Its bracket looks pointed about this.',
+      brackets:
+        'Solid mahogany. Brass fittings. Individual ambient lighting. More engineering went into these brackets than into the ship\'s emergency procedures.',
+      racking:
+        'Solid mahogany. Brass fittings. Individual ambient lighting. More engineering went into these brackets than into the ship\'s emergency procedures.',
+      light:
+        'Soft amber spotlights, individually calibrated per canister. The effect is that of a very small, very expensive museum. The museum is for coffee.',
+      spotlight:
+        'Soft amber spotlights, individually calibrated per canister. The effect is that of a very small, very expensive museum. The museum is for coffee.',
+      humidity:
+        'The air is noticeably different in here. Cool and faintly earthy, like volcanic soil and a lifestyle brand\'s origin story.',
+      temperature:
+        'The air is noticeably different in here. Cool and faintly earthy, like volcanic soil and a lifestyle brand\'s origin story.',
+      air:
+        'The air is noticeably different in here. Cool and faintly earthy, like volcanic soil and a lifestyle brand\'s origin story.',
     },
   },
 
