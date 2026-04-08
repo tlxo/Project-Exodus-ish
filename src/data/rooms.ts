@@ -49,9 +49,7 @@ There are no pistons. No fuel lines. No comforting mechanical hum of combustion.
 
 The sound you hear is not machinery. It is the aggregate white noise of ten thousand push notifications, harvested and looped.
 
-At the centre of the room, a brushed aluminium console bears a single large red lever: EMERGENCY PIVOT. A sticky note beside it reads: "Last resort. (Also second resort. Also first resort tbh.)"
-
-A maintenance manual sits on top of the console, lightly coffee-stained.`,
+At the centre of the room, a brushed aluminium console bears a single large red lever: EMERGENCY PIVOT. A sticky note beside it reads: "Last resort. (Also second resort. Also first resort tbh.)"`,
 
     shortDescription:
       "The Monetization Engine. Screens glow with dying metrics. The Vibes Index ticks downward. The lever waits.",
@@ -89,9 +87,7 @@ The effect is breathtaking and immediately terrifying. You can see clouds drifti
 
 A frosted-glass sign on the far wall reads: WE HAVE NOTHING TO HIDE.
 
-Beneath it, in text visible only when the sun hits it at a specific angle (which is constantly, because there are no blinds): *subject to NDA, terms of service, and the reasonable expectations of our shareholders.
-
-A pair of mirrored sunglasses rest on a slowly warping perspex side table.`,
+Beneath it, in text visible only when the sun hits it at a specific angle (which is constantly, because there are no blinds): *subject to NDA, terms of service, and the reasonable expectations of our shareholders.`,
 
     shortDescription:
       "The Transparency Suite. All glass. Sun at maximum intensity. The sign still claims there is nothing to hide.",

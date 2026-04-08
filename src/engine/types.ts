@@ -24,6 +24,8 @@ export interface Item {
   /** Lower-case words the parser should recognise as referring to this item. */
   aliases: string[];
   description: string;
+  /** Text shown in the room description when this item is present, in lieu of the generic listing. */
+  roomDescription?: string;
   takeable: boolean;
 }
 

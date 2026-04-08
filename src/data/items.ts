@@ -16,6 +16,7 @@ export const ITEMS: Record<string, Item> = {
     aliases: ['sunglasses', 'glasses', 'shades', 'sunnies'],
     description:
       "Sleek mirrored sunglasses with \"MOVE FAST.\" etched on the left lens and \"BREAK THINGS.\" on the right. The brand name on the arm reads \"VISIONARY™\". They look ridiculous. They would almost certainly help with the blinding glare in the Transparency Suite.",
+    roomDescription: 'A pair of mirrored sunglasses rest on a slowly warping perspex side table.',
     takeable: true,
   },
 
@@ -25,6 +26,7 @@ export const ITEMS: Record<string, Item> = {
     aliases: ['manual', 'book', 'guide', 'maintenance', 'engagement'],
     description:
       "A spiral-bound manual titled \"KEEPING THE VIBES INDEX UP: A Practical Guide to Metrics That Don't Mean Anything.\" Chapter 1: \"Blaming the Algorithm.\" Chapter 2: \"Blaming the Users.\" Chapter 3 is a full-page motivational poster of a cat hanging from a branch. There is no Chapter 4.",
+    roomDescription: 'A maintenance manual sits on top of the console, lightly coffee-stained.',
     takeable: true,
   },
 

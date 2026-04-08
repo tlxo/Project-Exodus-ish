@@ -42,17 +42,24 @@ function describeRoom(state: GameState, full: boolean): string[] {
   lines.push('');
   lines.push(...splitText(showFull ? room.description : room.shortDescription));
 
-  // Takeable items present in the room
-  const takeableHere = room.itemIds
-    .map(id => state.items[id])
-    .filter(item => item?.takeable);
+  // Items present in the room
+  const allItemsHere = room.itemIds.map(id => state.items[id]).filter(Boolean);
 
-  if (takeableHere.length > 0) {
+  // Items with narrative room descriptions (shown as prose)
+  const narrativeItems = allItemsHere.filter(item => item.roomDescription);
+  for (const item of narrativeItems) {
     lines.push('');
-    if (takeableHere.length === 1) {
-      lines.push(`There is a ${takeableHere[0].name} here.`);
+    lines.push(...splitText(item.roomDescription!));
+  }
+
+  // Takeable items without a narrative description (shown as a generic list)
+  const listedItems = allItemsHere.filter(item => item.takeable && !item.roomDescription);
+  if (listedItems.length > 0) {
+    lines.push('');
+    if (listedItems.length === 1) {
+      lines.push(`There is a ${listedItems[0].name} here.`);
     } else {
-      lines.push(`You can see: ${takeableHere.map(i => i.name).join(', ')}.`);
+      lines.push(`You can see: ${listedItems.map(i => i.name).join(', ')}.`);
     }
   }
 
