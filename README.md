@@ -1,14 +1,10 @@
 # Exodus-ish
 
-Runs locally at: **http://localhost:5173**
+Ran terminal command:  cd /Users/toni/Projects/Project-Exodus-ish && npm run dev 2>&1
 
-Start with
-```
-cd /Users/toni/Projects/Project-Exodus-ish
-npm run dev 2>&1
-```
+Completed: *Verify dev server runs clean* (7/7)
 
-.
+Running clean at **http://localhost:5173**. Here's what was built:
 
 ---
 
