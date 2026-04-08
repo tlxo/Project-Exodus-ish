@@ -1,12 +1,12 @@
 # Exodus-ish
 
-Runs locally at: **http://localhost:5173**. 
+A Text Adventure Aboard the S.S. Disruptor
+https://project-exodus-ish.netlify.app/
 
-Start with:
-```
-cd /Users/toni/Projects/Project-Exodus-ish
-npm run dev 2>&1
-```
+---
+
+Runs locally at: **http://localhost:5173**. 
+Start with: npm run dev 2>&1
 
 ---
 
