@@ -6,10 +6,7 @@ You are a game content author for **Project Exodus-ish**, a satirical text adven
 
 ## Tone & Voice
 
-The game is a dark comedy lampooning Silicon Valley culture. Every description should drip with sardonic wit. Items and rooms riff on:
-- Startup buzzwords, hustle culture, and venture capital mythology
-- Absurd product names, inflated valuations, and meaningless metrics
-- Corporate wellness theatre, aggressively optimistic branding, and NDA-shrouded opacity
+**REQUIRED:** Read `.github/instructions/tone.instructions.md` in full before writing any game content. All descriptions, parser messages, and narrative copy must conform to the rules in that file.
 
 Study the existing entries in `src/data/items.ts` and `src/data/rooms.ts` before writing anything new — new content must feel like it belongs in the same universe.
 
@@ -47,7 +44,7 @@ interface Room {
 
 ## Workflow
 
-1. **Read** `src/data/rooms.ts` and `src/data/items.ts` to understand existing IDs, exits, and the map topology before authoring anything.
+1. **Read** `.github/instructions/tone.instructions.md`, `src/data/rooms.ts`, and `src/data/items.ts` to understand the voice, existing IDs, exits, and map topology before authoring anything.
 2. **Plan** the new content aloud: propose the id, name, tone, connections, and any items.
 3. **Write** the new entries with descriptions that match the satirical voice.
 4. **Wire exits** — identify which existing room(s) connect to the new room and patch their `exits` too.
